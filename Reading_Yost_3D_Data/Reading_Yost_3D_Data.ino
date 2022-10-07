@@ -21,7 +21,7 @@ void setup() {
 }
 
 void loop() {
-  requestData(3, 100);
+  requestData(4, 100);
 
   if (IMU.available()) {
     serialIN(IMU.read(), 1);
@@ -48,6 +48,12 @@ void requestData(int data, int interval) {
       case 3:
         Serial.println("39(0x27) - ");
         Serial.println("Get corrected accelerometer vector");
+        IMU.println(":39");
+        break;
+
+      case 4:
+        Serial.println("1(0x01) - ");
+        Serial.println("Get tared orientation as euler angles");
         IMU.println(":39");
         break;
     }
