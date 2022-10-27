@@ -54,7 +54,7 @@ void requestData(int data, int interval) {
       case 4:
         Serial.println("1(0x01) - ");
         Serial.println("Get tared orientation as euler angles");
-        IMU.println(":39");
+        IMU.println(":1");
         break;
     }
   }
